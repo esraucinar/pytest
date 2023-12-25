@@ -3,19 +3,6 @@
 #Kullandığımız SauceDemo sitesinde kendi belirlediğiniz en az "3" test case daha yazınız.
 #En az 1 testiniz parametrize fonksiyonu ile en az 3 farklı veriyle test edilmelidir.
 
-""" PyTest- Decorators
-PyTest, Python'da kullanılan, yazılan programları test eden bir test çerçevesidir. 
-PyTest'in en önemli özelliği hata ayıklayıcı olarak kullanılmasıdır. 
-Python'da decorator'lar, işlevleri veya testleri genişletmek, 
-işlevleri işaretlemek veya testlerin davranışını değiştirmek için kullanılan özel işaretçi nitelikleridir.
-Pytest'te sık kullanılan decorator'lar şunlardır: 
-@pytest.fixture: Bu, testler arasında durum paylaşımını sağlayan ve gerekli kaynakları testlere sağlayan fixture'ları tanımlar.
-@pytest.mark.parametrize: Aynı test fonksiyonunu farklı girişlerle tekrar tekrar çalıştırmanıza olanak tanır, böylece testlerinizi çeşitli senaryolarla kontrol edebilirsiniz. 
-@pytest.mark.skip: Belirli bir testin atlanmasını sağlar. Örneğin, henüz hazır olmayan veya geçici olarak kullanılmayan testleri işaretlemek için kullanılır. 
-@pytest.mark.xfail: Beklenen başarısız test durumlarını işaretlemek için kullanılır. Yani, testin başarısız olmasını beklediğinizi belirtir. 
-Bu decorator'lar, testlerinizi işaretlemek, düzenlemek veya davranışlarını değiştirmek için kullanılır. 
-Pytest'te kullanıldıklarında testlerinizi daha esnek ve organize etmenizi daha kolay hale getirirler. """
-
 
 
 from selenium import webdriver
@@ -140,38 +127,6 @@ class Test_work:
 
 
 
-""" #kullanıcı ürün ekledikten sonra satın alma/ödeme sayfasına geçmelidir.
-#kullanıcı first_name'i ve Zip/Postal Code'u doldurabilmeli, last_name'e veri girememelidir.
-problem user girmeli
-    def test_checkout_information(self):
-        usernameInput = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,"user-name")))       
-        usernameInput.send_keys("standard_user")
-        passwordInput = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,"password"))) 
-        passwordInput.send_keys("secret_sauce")
-        loginButton = self.driver.find_element(By.ID , "login-button")
-        loginButton.click()
-        self.driver.execute_script("window.scrollTo(0,500)") 
-        addToCart = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.XPATH,"//*[@id='add-to-cart-test.allthethings()-t-shirt-(red)']")))
-        addToCart.click()
-        remove = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.XPATH,"//*[@id='remove-test.allthethings()-t-shirt-(red)']")))
-        testResult = remove.text == "Remove"
-        #scrollBar'ı yukarı kaydır.0 değer girildi.
-        self.driver.execute_script("window.scrollTo(0,0)") 
-        #sepete git.tıkla.
-        shopping_cart_container = self.driver.find_element(By.ID, "shopping_cart_container")
-        shopping_cart_container.click()
-
-        #yeni bir sayfa açıldığını continue shopping ile gör.
-        continue_shopping = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,"continue-shopping"))) 
-        continue_shopping.send_keys("Continue Shopping")
-
-
-        #checkout ile ödeme sayfasına geç.
-        checkout = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID, "checkout")))
-        checkout.click()
-        first_name = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,"first-name")))       
-        first_name.send_keys("esra")
- """
 
 
 
